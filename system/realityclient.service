@@ -1,0 +1,15 @@
+[Unit]
+Description=realityservice
+After=network.target
+
+[Service]
+Type=simple
+User=dang
+Restart=on-failure
+RestartSec=5s
+ExecStart=/home/dang/code/realityclient/system/rc.sh
+ExecReload=/home/dang/code/realityclient/system/rc.sh
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
